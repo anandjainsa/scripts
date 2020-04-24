@@ -12,7 +12,7 @@ git tag -a v$releaseVersion -m "My version v$releaseVersion"
 
 # Removing the release branch
 git branch -D release/$releaseVersion
-
+git branch -D develop
 
 git push origin ${gitbranch} --tags
 #git push origin ${gitbranch} && git push --tags
