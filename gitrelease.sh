@@ -1,14 +1,12 @@
 releaseVersion=$1
-# The next development version
-developmentVersion=$2
-gitbranch=$3
+gitbranch=$2
 
 # go to the master branch
 git checkout ${gitbranch}
 git merge --no-ff -m "US00000 $scmCommentPrefix Merge release/$releaseVersion into $gitbranch" release/$releaseVersion
 
 # Tagging release branch
-git tag -a v$releaseVersion -m "My version v$releaseVersion"
+git tag -a v$releaseVersion -m "Commit version v$releaseVersion"
 
 # Removing the release branch
 git branch -D release/$releaseVersion
